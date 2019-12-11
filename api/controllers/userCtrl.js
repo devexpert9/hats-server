@@ -93,7 +93,7 @@ exports.forgot_password = function(req, res) {
                     dynamic_data += chunk;
                 }).on('end', function() {
                 var helper = require('sendgrid').mail;
-                var fromEmail = new helper.Email('babitaindiit@gmail.com'/*'priyankasharma4010@gmail.com'*/, 'Stratergy Athlete');
+                var fromEmail = new helper.Email('babitaindiit@gmail.com'/*'priyankasharma4010@gmail.com'*/, 'Hats');
                 var toEmail = new helper.Email(req.body.email);
                 //var toEmail = new helper.Email('gurmukhindiit@gmail.com');
                 var subject = 'Forgot Password Request';

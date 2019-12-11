@@ -26,7 +26,7 @@ var edituserimage = require('../controllers/userCtrl');
    app.route('/edituserimage/:id')
      .post(edituserimage.update_user_image);
 
-     app.route('/uploadImage')
+   app.route('/uploadImage')
      .post(edituserimage.upload_image);
 
 var cat = require('../controllers/categoryCtrl');
