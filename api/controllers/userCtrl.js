@@ -93,7 +93,7 @@ exports.forgot_password = function(req, res) {
                     dynamic_data += chunk;
                 }).on('end', function() {
                 var helper = require('sendgrid').mail;
-                var fromEmail = new helper.Email('babitaindiit@gmail.com'/*'priyankasharma4010@gmail.com'*/, 'Hats');
+                var fromEmail = new helper.Email('babitaindiit@gmail.com'/*'priyankasharma4010@gmail.com'*/, 'Stratergy Athlete');
                 var toEmail = new helper.Email(req.body.email);
                 //var toEmail = new helper.Email('gurmukhindiit@gmail.com');
                 var subject = 'Forgot Password Request';
@@ -210,7 +210,13 @@ exports.deleteuser = function(req, res) {
 };
 
 exports.update_user = function(req, res) {
-  users.update({_id: req.body._id},{$set:{ 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image, 'password': req.body.password } }, {new: true}, function(err, user) {
+  if(req.body.password){
+    let body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image, 'password': req.body.password }
+  }
+  else{
+      let body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image }
+  }
+  users.update({_id: req.body._id},{$set: body}, {new: true}, function(err, user) {
     if(user == null){
       res.send({
         error: err,
