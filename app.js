@@ -18,7 +18,7 @@
   multer  = require('multer');
  
   mongoose.Promise = global.Promise;
-  var connectionUrl = 'mongodb://root:fmvleXGIZgp3@some_host:27017/hats?authSource=admin';
+  var connectionUrl = 'mongodb://root:fmvleXGIZgp3@localhost:27017/hats?authSource=admin';
   mongoose.connect(connectionUrl); 
 // var db = mongoose.connect('mongodb://root:fmvleXGIZgp3@localhost/hats');
 
