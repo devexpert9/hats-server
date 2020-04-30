@@ -18,8 +18,9 @@
   multer  = require('multer');
  
   mongoose.Promise = global.Promise;
-  //mongoose.connect('mongodb://localhost/hats'); 
-var db = mongoose.createConnection('mongodb://root:fmvleXGIZgp3@localhost/hats');
+  var connectionUrl = 'mongodb://root:fmvleXGIZgp3@some_host:27017/hats?authSource=admin';
+  mongoose.connect(connectionUrl); 
+// var db = mongoose.connect('mongodb://root:fmvleXGIZgp3@localhost/hats');
 
   app.use(function (req, res, next) {
       res.setHeader('Access-Control-Allow-Origin', '*');
