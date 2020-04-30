@@ -19,7 +19,7 @@
  
   mongoose.Promise = global.Promise;
   //mongoose.connect('mongodb://localhost/hats'); 
-var db = Mongoose.createConnection('mongodb://bitnami:fmvleXGIZgp3@localhost/hats');
+var db = mongoose.createConnection('mongodb://bitnami:fmvleXGIZgp3@localhost/hats');
 
   app.use(function (req, res, next) {
       res.setHeader('Access-Control-Allow-Origin', '*');
