@@ -13,6 +13,10 @@ var adminlogin = require('../controllers/adminCtrl');
 var updateadminprofile = require('../controllers/adminCtrl');
    app.route('/updateprofile')
      .post(adminlogin.update_admin_profile);
+     
+var update_admin_password = require('../controllers/adminCtrl');
+   app.route('/update_admin_password')
+     .post(adminlogin.update_admin_password);
 
 var userlists = require('../controllers/userCtrl');
    app.route('/listuser')

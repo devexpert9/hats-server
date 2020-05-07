@@ -179,7 +179,7 @@ exports.update_admin_profile = function(req, res) {
           { firstname: req.body.firstname,
             lastname: req.body.lastname,
             email:req.body.email,
-            contact:req.body.contact,
+            // contact:req.body.contact,
             image:req.body.image,
           }}, {new: true}, function(err, user) {
             console.log(user, 'user')
