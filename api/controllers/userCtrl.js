@@ -22,7 +22,8 @@ var upload = multer({ storage: storage }).single('image');
 
 // const bcrypt = require('bcrypt');
 //****************  create_user_function ****************************
-exports.signup = function(req, res) {
+exports.signup = function(req, res)
+{
   users.findOne({email: req.body.email}, function(err, user) {
     if(user == null){
       var new_user = new users({
@@ -381,35 +382,32 @@ exports.user_listing = function(req, res) {
  dict = {};
  var perPage = 10;
  var page =req.body.page;
- users.find({}, null, {sort: {'created_on': -1}})
-       .skip((perPage * page) - perPage)
-       .limit(perPage)
-       .exec(function(err, user) {
-          function list(){
-           dict = user[counter];
-           console.log(dict._id,"userid");
-           users.findOne({_id: dict._id}, function(err, singleuser) {
-            if(singleuser!=null){
-            // users.find({"followers": { $elemMatch: { "userid": dict._id } } },function(err, userdata){
-            // console.log(userdata,"followers",dict._id);
-               dict.following = [];
-               dict.username = singleuser.firstname+' '+singleuser.lastname ;
-                data.push(dict);
-                // console.log(data);
-               if(counter < (user.length-1)){
-                    counter = counter + 1;
-                  list();
-                }else{
-                     res.send({
-                     status: 1,
-                     data: data,
-                     current: page                
-                });
-               }
-            // })
-           }
-         })
-        };
+ users.find({}).exec(function(err, user) {
+        //   function list(){
+        //    dict = user[counter];
+        //    console.log(dict._id,"userid");
+        //    users.findOne({_id: dict._id}, function(err, singleuser) {
+        //     if(singleuser!=null){
+        //     // users.find({"followers": { $elemMatch: { "userid": dict._id } } },function(err, userdata){
+        //     // console.log(userdata,"followers",dict._id);
+        //        dict.following = [];
+        //        dict.username = singleuser.firstname+' '+singleuser.lastname ;
+        //         data.push(dict);
+        //         // console.log(data);
+        //        if(counter < (user.length-1)){
+        //             counter = counter + 1;
+        //           list();
+        //         }else{
+        //              res.send({
+        //              status: 1,
+        //              data: data,
+        //              current: page                
+        //         });
+        //        }
+        //     // })
+        //    }
+        //  })
+        // };
        if(user.length==0){
          res.send({
            error: err,
@@ -417,7 +415,11 @@ exports.user_listing = function(req, res) {
            data: []
          });
        }else{
-         list();
+         res.send({
+           error: err,
+           status: 1,
+           data: user
+         });
        }
        })
  
