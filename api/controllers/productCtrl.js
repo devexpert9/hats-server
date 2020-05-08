@@ -64,10 +64,10 @@ exports.is_product_exist = function(req, res) {
 
 exports.product_listing = function(req, res) {
   Product.find({ }, null, {sort: {'created_on': -1}}).exec( function(err, doc) {
-    var couter = 0,
+    var counter = 0,
     dict = {},
     data = [];
-    function getCategoryName(){
+    function getCategoryName(counter){
       if(counter < doc.length){
         Category.findOne({'_id': doc[counter].catId}, function(err, doc1){
           dict = {
@@ -87,7 +87,7 @@ exports.product_listing = function(req, res) {
           };
           data.push(dict);
           counter += 1;
-          getCategoryName();
+          getCategoryName(counter);
         });
       }else{
         res.send({
@@ -97,7 +97,7 @@ exports.product_listing = function(req, res) {
         });
       }
     };
-    getCategoryName();
+    getCategoryName(counter);
   });
 };
 
