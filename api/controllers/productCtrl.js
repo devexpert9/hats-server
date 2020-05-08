@@ -97,6 +97,7 @@ exports.product_listing = function(req, res) {
         });
       }
     };
+    getCategoryName();
   });
 };
 
