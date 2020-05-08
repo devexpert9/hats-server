@@ -44,6 +44,9 @@ var adminlogin = require('../controllers/adminCtrl');
    app.route('/loginAdmin')
      .post(adminlogin.admin_login);
 
+var adminlogin = require('../controllers/adminCtrl');
+   app.route('/upload_admin_image')
+     .post(adminlogin.upload_admin_image);
 
 var fblogin = require('../controllers/userCtrl');
    app.route('/loginWithFb')
