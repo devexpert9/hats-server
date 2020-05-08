@@ -45,7 +45,6 @@ var category = require('../controllers/categoryCtrl');
 var product = require('../controllers/productCtrl');
     app.route('/productlist')
      .post(product.product_listing);
-};
 
 
 var product = require('../controllers/productCtrl');
