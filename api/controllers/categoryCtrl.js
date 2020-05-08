@@ -134,12 +134,9 @@ exports.update_view_count = function(req, res){
 
 exports.delete_category = function(req, res)
 {
-  console.log(req);
-  console.log(res);
-  return false;
-  Category.remove({ '_id': req.body._id }, function(err, doc) {
-    fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {
-    }); 
+  Category.remove({ '_id': req.body.categoryid }, function(err, doc)
+  {
+    // fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {}); 
 
     res.send({
       error: null,
