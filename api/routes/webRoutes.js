@@ -43,7 +43,7 @@ var edituserimage = require('../controllers/userCtrl');
 
 var cat = require('../controllers/categoryCtrl');
     app.route('/addcategorty')
-    .post(cat.add_categorty);    
+    .post(cat.add_categorty);
 
 var cats = require('../controllers/categoryCtrl');
     app.route('/uploadImage')
@@ -65,6 +65,7 @@ var cats = require('../controllers/categoryCtrl');
     app.route('/updatecategory')
     .post(cats.update_category);
   
+
 var product = require('../controllers/productCtrl');
     app.route('/addproduct')
      .post(product.add_product);
