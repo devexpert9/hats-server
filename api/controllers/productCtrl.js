@@ -61,7 +61,7 @@ exports.deleteproduct = function(req, res)
 
 exports.updateproduct = function(req, res)
 {
-  Product.update({ '_id': req.body._id },{$set: {title: req.body.title, link: req.body.link, image: req.body.image, price: req.body.price, catId: req.body.catId}} function(err, doc)
+  Product.update({ '_id': req.body._id },{$set: {title: req.body.title, link: req.body.link, image: req.body.image, price: req.body.price, catId: req.body.catId}}, function(err, doc)
   {
     // fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {}); 
 
