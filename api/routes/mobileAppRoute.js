@@ -33,6 +33,11 @@ var view_profile = require('../controllers/userCtrl');
 var change_pass = require('../controllers/userCtrl');
     app.route('/change_password')
     .post(change_pass.update_user_password);
+
+var change_pass = require('../controllers/userCtrl');
+    app.route('/update_image')
+    .post(change_pass.update_user_image);
+    
     
 var category = require('../controllers/categoryCtrl');
     app.route('/categorylist')
