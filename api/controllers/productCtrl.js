@@ -150,7 +150,7 @@ exports.product_listing_for_buy = function(req, res)
             viewCount: doc[counter].viewCount,
             catId: doc[counter].catId,
             image: doc[counter].image,
-            total_items: doc[counter].total_items,
+            price: doc[counter].price,
             status: doc[counter].status,
             category_name: doc.name
           };
