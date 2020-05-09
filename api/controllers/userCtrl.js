@@ -240,7 +240,7 @@ exports.update_user = function(req, res) {
 exports.update_user_image = function(req, res) {
   upload(req,res,function(err){
     //var data = JSON.parse(req.body.fields);
-    //console.log(data.userId)
+    console.log(req.params)
     console.log(req.file.filename);
     if(err){
       res.json({error_code:1,err_desc:err});
