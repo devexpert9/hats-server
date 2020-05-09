@@ -217,7 +217,7 @@ exports.update_user = function(req, res) {
   else{
       let body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image }
   }
-  users.update({_id: req.body._id},{$set: req.body}, {new: true}, function(err, user) {
+  users.update({_id: req.body._id},{$set: body}, {new: true}, function(err, user) {
     if(user == null){
       res.send({
         error: err,
