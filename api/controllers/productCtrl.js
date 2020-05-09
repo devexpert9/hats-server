@@ -44,6 +44,20 @@ exports.add_product = function(req, res) {
   });
 };
 
+exports.deleteproduct = function(req, res)
+{
+  Category.remove({ '_id': req.body.productID }, function(err, doc)
+  {
+    // fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {}); 
+
+    res.send({
+      error: null,
+      status: 1,
+      msg: 'Product deleted successfully.'
+    });
+  });
+};
+
 exports.is_product_exist = function(req, res) {
   Product.find({'name': req.body.name, 'catId': req.body.categortId }, function(err, doc) {
     if(doc.length == 0){
@@ -446,6 +460,8 @@ exports.deletescheduled = function(req, res) {
     }
   })
 };
+
+
 //******************** get scheduled by user api for web ************************
 exports.scheduledbyuser = function(req, res) {
     var counter = 0,dict = {};

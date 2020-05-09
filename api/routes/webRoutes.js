@@ -71,6 +71,10 @@ var product = require('../controllers/productCtrl');
      .post(product.add_product);
 
 var product = require('../controllers/productCtrl');
+    app.route('/deleteproduct')
+     .post(product.deleteproduct);
+
+var product = require('../controllers/productCtrl');
     app.route('/productslist')
      .post(product.product_listing);
 
