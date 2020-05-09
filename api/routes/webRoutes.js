@@ -81,6 +81,10 @@ var product = require('../controllers/productCtrl');
 var product = require('../controllers/productCtrl');
     app.route('/isproductexist')
      .post(product.is_product_exist);
+
+var product = require('../controllers/productCtrl');
+    app.route('/update_product')
+     .post(product.updateproduct);
     
 };
 

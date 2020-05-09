@@ -39,6 +39,9 @@ var schema = new Schema({
     },
     status: {
       type: Number
+    },
+    price:{
+      type: Number
     }
   });
 

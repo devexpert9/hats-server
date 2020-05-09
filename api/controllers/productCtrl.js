@@ -22,7 +22,8 @@ exports.add_product = function(req, res) {
     total_items: req.body.total_items,
     catId: req.body.categortId,
     viewCount: 0,
-    status: 1
+    status: 1,
+    price: req.body.price
   });
 
   product.save(function(err, doc) {
@@ -46,7 +47,21 @@ exports.add_product = function(req, res) {
 
 exports.deleteproduct = function(req, res)
 {
-  Category.remove({ '_id': req.body.productID }, function(err, doc)
+  Product.remove({ '_id': req.body.productID }, function(err, doc)
+  {
+    // fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {}); 
+
+    res.send({
+      error: null,
+      status: 1,
+      msg: 'Product deleted successfully.'
+    });
+  });
+};
+
+exports.updateproduct = function(req, res)
+{
+  Product.update({ '_id': req.body.productID },{$set: {title: req.body.title, link: req.body.link, image: req.body.image, price: req.body.price}} function(err, doc)
   {
     // fs.unlinkSync('/home/bitnami/images/' + req.body.image, function (err) {}); 
 
