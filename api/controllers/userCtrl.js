@@ -211,11 +211,12 @@ exports.deleteuser = function(req, res) {
 };
 
 exports.update_user = function(req, res) {
+  let body;
   if(req.body.password){
-    let body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image, 'password': req.body.password }
+    body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image, 'password': req.body.password }
   }
   else{
-      let body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image }
+    body= { 'firstname': req.body.firstname, 'lastname': req.body.lastname, 'email':req.body.email, 'contact':req.body.contact, 'image':req.body.image }
   }
   users.update({_id: req.body._id},{$set: body}, {new: true}, function(err, user) {
     if(user == null){
