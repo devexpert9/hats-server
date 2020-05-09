@@ -130,8 +130,9 @@ exports.product_listing = function(req, res) {
   });
 };
 
-exports.product_listing_for_buy = function(req, res) {
-  Product.find({ 'status': 1, 'catId': req.body.categoryId }, null, {sort: {'created_on': -1}}).exec(function(err, doc) {
+exports.product_listing_for_buy = function(req, res) 
+{
+  Product.find({ 'status': 1, 'catId': req.body.categoryID }, null, {sort: {'created_on': -1}}).exec(function(err, doc) {
     var couter = 0,
     dict = {},
     data = [];

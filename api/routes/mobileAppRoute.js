@@ -48,7 +48,7 @@ var product = require('../controllers/productCtrl');
 
 
 var product = require('../controllers/productCtrl');
-    app.route('/productlisting')
+    app.route('/productsByID')
      .post(product.product_listing_for_buy);
 };
 
