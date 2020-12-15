@@ -107,7 +107,7 @@ exports.forgot_password = function(req, res) {
 
                 var mail = new helper.Mail(fromEmail, subject, toEmail, content);
                 // var sg = require('sendgrid')(constants.SENDGRID_API_ID);
-                var sg = require('sendgrid')('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');
+                var sg = require('sendgrid')('xxxxxxxx');
                 var request = sg.emptyRequest({
                     method: 'POST',
                     path: '/v3/mail/send',
@@ -734,7 +734,7 @@ exports.show_users_addgroup = function(req, res) {
 
 //                 // //var content = new helper.Content('text/plain', 'A new order has been placed by a customer for your services');
 //                 // var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-//                 // var sg = require('sendgrid')('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');
+//                 // var sg = require('sendgrid')('xxxxxx');
 //                 // var request = sg.emptyRequest({
 //                 //     method: 'POST',
 //                 //     path: '/v3/mail/send',
@@ -786,7 +786,7 @@ exports.show_users_addgroup = function(req, res) {
 
 //                 var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 //                 // var sg = require('sendgrid')(constants.SENDGRID_API_ID);
-//                 var sg = require('sendgrid')('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');
+//                 var sg = require('sendgrid')('xxxxxxx');
 //                 var request = sg.emptyRequest({
 //                     method: 'POST',
 //                     path: '/v3/mail/send',
@@ -805,7 +805,7 @@ exports.show_users_addgroup = function(req, res) {
 //             var subject = 'Login Cleanme';
 //             var content = new helper.Content('text/plain', 'Your cleanme login password is ' + req.body.password);
 //             var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-//             var sg = require('sendgrid')('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');
+//             var sg = require('sendgrid')('xxxxxxxxx');
 //             var request = sg.emptyRequest({
 //                 method: 'POST',
 //                 path: '/v3/mail/send',
@@ -1568,7 +1568,7 @@ exports.show_users_addgroup = function(req, res) {
 
 //                 var mail = new helper.Mail(fromEmail, subject, toEmail, content);
 //                 // var sg = require('sendgrid')(constants.SENDGRID_API_ID);
-//                 var sg = require('sendgrid')('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');
+//                 var sg = require('sendgrid')('xxxxxxxxx');
 //                 var request = sg.emptyRequest({
 //                     method: 'POST',
 //                     path: '/v3/mail/send',
@@ -1599,7 +1599,10 @@ exports.show_users_addgroup = function(req, res) {
 //             // var numsms = user[0].fname+Math.floor(Math.random() * 90000) + 10000+user[0].lname;
 //             // var content = new helper.Content('text/plain', 'Your cleanme new password is ' + numsms);
 //             // var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-//             // var sg = require('sendgrid')('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');
+//             // var sg = require('sendgrid')('xxxxxxx');
+
+
+
 //             // var request = sg.emptyRequest({
 //             //     method: 'POST',
 //             //     path: '/v3/mail/send',
